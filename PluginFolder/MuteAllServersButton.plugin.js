@@ -4,8 +4,8 @@
  * @description Mute All Servers Button
  * @author JediMinecraft1
  * @authorLink https://github.com/Jedi-Coder1
- * @source https://github.com/Jedi-Coder1/Mute-All-Servers-Button
- * @updateUrl https://raw.githubusercontent.com/Jedi-Coder1/Mute-All-Servers-Button/main/MuteAllServersButton.plugin.js
+ * @source https://github.com/Jedi-Coder1/DownloadBdPlugins
+ * @updateUrl https://raw.githubusercontent.com/Jedi-Coder1/DownloadBdPlugins/main/PluginFolder/MuteAllServersButton.plugin.js
  */
 
 /*@cc_on
