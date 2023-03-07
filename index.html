@@ -4,56 +4,12 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width">
-  <title>Place Id To Universal Id </title>
 </head>
 
 <body>
-  <a href="https://github.com/Jedi-Coder1/universe-to-place-id"><img style="position: absolute; top: 0; right: 0; border: 0;" src="" alt="Go To GitHub Page"></a>
-  <input class='PlaceId' id = 'Pid' placeholder='Enter Place Id Here' />
-
-  <button class='Submit' id='btn'>Submit</button>
-
-  <label>The Universal Id Will Be Shown --></label>
-
-  <label id = 'Univer'>Here</label>
-
-  <script>
-    const firstBit = 'https://apis.roproxy.com/universes/v1/places/'
-    const lastBit = '/universe'
-    
-    function showData(theData) {
-      if (!isNaN(theData) && !isNaN(parseFloat(theData))) {
-        document.getElementById("Univer").innerHTML = theData;
-        navigator.clipboard.writeText(theData);
-        alert(`Your Universal Id Is ${theData}`);
-    } else {
-        alert('Not A Valid Place Id')}};
-
-    function get(id) {
-	  var req = new XMLHttpRequest();
-      req.overrideMimeType("application/json");
-      req.open('GET', firstBit.concat(id, lastBit), true);
-      req.onload  = function() {
-        var jsonResponse = JSON.parse(req.responseText);
-        try {showData(jsonResponse.universeId)}
-        catch(err) {
-          alert(err.message)
-}
-        
-};
-    req.send(null);
-    };
-
-    document.getElementById('btn').addEventListener('click', () => {
-      let str = document.getElementById('Pid').value
-        if (!str) {alert('Enter Valid Place Id');}
-        else {
-          if (!isNaN(str) && !isNaN(parseFloat(str))) {
-            get(str)
-          }else {
-            alert('Enter Valid Place Id');
-}}});
-  </script>
+  <p><a href="https://raw.githubusercontent.com/Jedi-Coder1/Mute-All-Servers-Button/main/MuteAllServersButton.plugin.js" download>
+  <img src="Mute All Servers Button" alt="Mute All Servers Button">
+</a></p>
 </body>
 
 </html>
