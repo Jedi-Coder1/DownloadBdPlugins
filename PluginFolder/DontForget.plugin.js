@@ -1,11 +1,12 @@
 /**
+/**
  * @name DontForget
  * @version 0.0.1
  * @description Clipboard for discord
  * @author JediMinecraft1
  * @authorLink https://github.com/Jedi-Coder1
  * @source https://github.com/Jedi-Coder1/DownloadBdPlugins
- * @updateUrl 
+ * @updateUrl https://raw.githubusercontent.com/Jedi-Coder1/DownloadBdPlugins/main/PluginFolder/DontForget.plugin.js
  */
 
 /*@cc_on
