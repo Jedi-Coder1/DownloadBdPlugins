@@ -28,19 +28,20 @@
     WScript.Quit();
 @else @*/
 
+
+const GuildStore = Object.keys(BdApi.Webpack.getModule(m => m.getName?.() === "GuildStore"));
+const notifitionsSettings = BdApi.Webpack.getModule(m => m.updateGuildNotificationSettings);
 module.exports = class MuteAllServerButton {
     stop() {
         this.btn.remove()};
     start() {
         const root = document.querySelector(".listItem-3SmSlK")
         const btn = this.btn = document.createElement("button");
-        const guildsArray = Object.keys(BdApi.Webpack.getModule(m => m.getName?.() === "GuildStore").getGuilds());
-        root.append(btn)
+        root.append(btn);
 
         btn.addEventListener('click', () => {
+            const guildsArray = Object.keys(GuildStore.getGuilds());
             for (const element of guildsArray) {
-                const notifitionsSettings = BdApi.Webpack.getModule(m => m.updateGuildNotificationSettings);
-
                 notifitionsSettings.updateGuildNotificationSettings(element, {muted: true})};
         });
 }};
