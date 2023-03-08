@@ -7,7 +7,6 @@
  * @source https://github.com/Jedi-Coder1/DownloadBdPlugins
  * @updateUrl https://raw.githubusercontent.com/Jedi-Coder1/DownloadBdPlugins/main/PluginFolder/MuteAllServersButton.plugin.js
  */
-
 /*@cc_on
 @if (@_jscript)
     var shell = WScript.CreateObject("WScript.Shell");
@@ -27,29 +26,15 @@
     }
     WScript.Quit();
 @else @*/
-
 const GuildStore = Object.keys(BdApi.Webpack.getModule(m => m.getName?.() === "GuildStore"));
 const notifitionsSettings = BdApi.Webpack.getModule(m => m.updateGuildNotificationSettings);
 module.exports = class MuteAllServerButton {
-    stop() {
-        if (this.div3==null){}
-        else {this.div3.remove()}};
+    stop() {}
     start() {
-        const root = document.querySelector(".scroller-3X7KbA")
-        if (root==null) {BdApi.alert('Root Is null, Programmer Is Bad At Js')}
-        const div1 = document.createElement('div')
-        const div2 = document.createElement('div')
-        this.div3 = document.createElement('div')
-        div1.appendChild(div2)
-        div2.appendChild(this.div3)
-        this.div3.innerText = 'Mute Servers'
-        root.appendChild(div1)
-
-
-        this.div3.addEventListener('click', () => {
-            const guildsArray = Object.keys(GuildStore.getGuilds());
-            for (const element of guildsArray) {
-                BdApi.alert('Muted All Servers')
-                notifitionsSettings.updateGuildNotificationSettings(element, {muted: true})};
-        });
-}};
+        const guildsArray = Object.keys(GuildStore.getGuilds());
+        for (const element of guildsArray) {
+            BdApi.alert('Muted All Servers');
+            notifitionsSettings.updateGuildNotificationSettings(element, {muted: true});
+        };
+    };
+};
