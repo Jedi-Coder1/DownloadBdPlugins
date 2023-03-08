@@ -29,18 +29,16 @@
 @else @*/
 
 module.exports = class MuteAllServerButton {
-    stop(){
-        //this.btn.remove();
-}
+    stop() {
+        this.btn.remove()};
     start() {
-        //const root = document.querySelector(".listItem-3SmSlK")
-        //const btn = this.btn = root.createElement("button");
-        const guildsArray = this.guildsArray = Object.keys(BdApi.Webpack.getModule(m => m.getName?.() === "GuildStore").getGuilds())
-        for (const element of guildsArray) {
-            const notifitionsSettings = BdApi.Webpack.getModule(m => m.updateGuildNotificationSettings);
+        this.btn = document.querySelector(".listItem-3SmSlK").createElement("button");
 
-            notifitionsSettings.updateGuildNotificationSettings(element, { 
-            muted: true
-            })};
-    }
-}
+        this.btn.addEventListener('click', () => {
+            const guildsArray = Object.keys(BdApi.Webpack.getModule(m => m.getName?.() === "GuildStore").getGuilds());
+            for (const element of guildsArray) {
+                const notifitionsSettings = BdApi.Webpack.getModule(m => m.updateGuildNotificationSettings);
+
+                notifitionsSettings.updateGuildNotificationSettings(element, {muted: true})};
+        });
+}};
