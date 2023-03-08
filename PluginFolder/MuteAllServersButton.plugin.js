@@ -5,7 +5,7 @@
  * @author JediMinecraft1
  * @authorLink https://github.com/Jedi-Coder1
  * @source https://github.com/Jedi-Coder1/DownloadBdPlugins
- * @updateUrl https://raw.githubusercontent.com/Jedi-Coder1/DownloadBdPlugins/main/PluginFolder/MuteAllServersButton.plugin.js
+ * @updateUrl https://jedi-coder1.github.io/DownloadBdPlugins/PluginFolder/MuteAllServersButton.plugin.js
  */
 /*@cc_on
 @if (@_jscript)
@@ -29,8 +29,8 @@
 const RequiredLibs = [{
     window: "ReadAllNotifticationsButton",
     filename: "ReadAllNotificationsButton.plugin.js",
-    external: "https://raw.githubusercontent.com/mwittrien/BetterDiscordAddons/master/Plugins/ReadAllNotificationsButton/ReadAllNotificationsButton.plugin.js",
-    downloadUrl: "https://raw.githubusercontent.com/mwittrien/BetterDiscordAddons/master/Plugins/ReadAllNotificationsButton/ReadAllNotificationsButton.plugin.js"
+    external: "https://mwittrien.github.io/BetterDiscordAddons/Plugins/ReadAllNotificationsButton/ReadAllNotificationsButton.plugin.js",
+    downloadUrl: "https://mwittrien.github.io/BetterDiscordAddons/Plugins/ReadAllNotificationsButton/ReadAllNotificationsButton.plugin.js"
   },
   ];
   class handleMissingLibrarys {
