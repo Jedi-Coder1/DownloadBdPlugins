@@ -26,6 +26,48 @@
     }
     WScript.Quit();
 @else @*/
+const RequiredLibs = [{
+    window: "ReadAllNotifticationsButton",
+    filename: "ReadAllNotificationsButton.plugin.js",
+    external: "https://raw.githubusercontent.com/mwittrien/BetterDiscordAddons/master/Plugins/ReadAllNotificationsButton/ReadAllNotificationsButton.plugin.js",
+    downloadUrl: "https://raw.githubusercontent.com/mwittrien/BetterDiscordAddons/master/Plugins/ReadAllNotificationsButton/ReadAllNotificationsButton.plugin.js"
+  },
+  ];
+  class handleMissingLibrarys {
+    load() {
+      for (const Lib of RequiredLibs.filter(lib => !window.hasOwnProperty(lib.window)))
+        BdApi.showConfirmationModal(
+          "Recommended Plugin Missing",
+          `Do You Want To Install ${Lib.window}?`,
+          {
+            confirmText: "Confirm",
+            cancelText: "Cancel",
+            onConfirm: () => this.downloadLib(Lib),
+          }
+        );
+    }
+    async downloadLib(Lib) {
+      const fs = require("fs");
+      const path = require("path");
+      const { Plugins } = BdApi;
+      const LibFetch = await fetch(
+        Lib.downloadUrl
+      );
+      if (!LibFetch.ok) return this.errorDownloadLib(Lib);
+      const LibContent = await LibFetch.text();
+      try {
+        await fs.writeFile(
+          path.join(Plugins.folder, Lib.filename),
+          LibContent,
+          (err) => {
+            if (err) return this.errorDownloadLib(Lib);
+          }
+        );
+      } catch (err) {
+        return this.errorDownloadLib(Lib);
+      }
+    }};
+
 const GuildStore = BdApi.Webpack.getModule(m => m.getGuilds);
 const notifitionsSettings = BdApi.Webpack.getModule(m => m.updateGuildNotificationSettings);
 module.exports = class MuteAllServerButton {
