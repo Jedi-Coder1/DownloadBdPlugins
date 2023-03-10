@@ -5,7 +5,7 @@
  * @author JediMinecraft1
  * @authorLink https://github.com/Jedi-Coder1
  * @source https://github.com/Jedi-Coder1/DownloadBdPlugins
- * @updateUrl https://jedi-coder1.github.io/DownloadBdPlugins/PluginFolder/MuteAllServersButton.plugin.js
+ * @updateUrl https://jedi-coder1.github.io/DownloadBdPlugins/PluginFolder/MuteAllServersPlugin.plugin.js
  */
 /*@cc_on
 @if (@_jscript)
