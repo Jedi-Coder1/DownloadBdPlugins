@@ -1,7 +1,7 @@
 /**
- * @name MuteAllServersButton
+ * @name MuteAllServersPlugin
  * @version 0.0.1
- * @description Mute All Servers Button(Runs On Plugin Start)
+ * @description Mute All Servers Plugin(Runs On Plugin Start)
  * @author JediMinecraft1
  * @authorLink https://github.com/Jedi-Coder1
  * @source https://github.com/Jedi-Coder1/DownloadBdPlugins
